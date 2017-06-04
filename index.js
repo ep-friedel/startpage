@@ -9,6 +9,7 @@ const   express = require('express')
     ,   fetch = require('node-fetch')
     ,   server_port = process.env.SP_PORT
     ,   server_ip_address = 'localhost'
+    ,   exec = require('child_process').execFile
     ,   hmac = require(process.env.SP_HOME + 'hmac')(process.env.GITHUB_SECRET, 'X-Hub-Signature')
     ,   sslServer = https.createServer({
             key: fs.readFileSync(process.env.KEYSTORE + 'fochlac_com_key.pem'),
