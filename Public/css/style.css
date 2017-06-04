@@ -1,0 +1,399 @@
+body {
+    margin: 0;
+    font-family: 'Raleway', sans-serif;
+}
+
+ul {
+    margin: 0 5px;
+    padding: 0 0 0 10px;
+    list-style: none;
+}
+
+a {
+    text-decoration: none;
+    color: #4968b9;
+    font-weight: 600;
+}
+a.offline{
+    color: red;
+}
+textarea {
+    resize: none;
+    margin-top: 5px;
+}
+.clearfix:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+.hidden {
+    display: none;
+}
+/*-----------------------------------Header------------------------------*/
+
+.header {
+    background: black;
+    padding: 5px;
+    text-align: center;
+    position: relative;
+}
+
+.header h1 {
+    /* margin: 10px 0; */
+    color: white;
+    margin: 5px 0 5px;
+    font-size: 1.8em;
+}
+
+h2.subtitle {
+    color: white;
+    margin: 5px 0 5px;
+    font-size: 1.4em;
+}
+
+/*----------------------Content--------------------------------------*/
+
+.content {
+    width: 100%;
+    margin: 0 0 0 0%;
+    min-height: 500px;
+    display: flex;
+    justify-content: flex-end;
+    align-items: flex-start;
+    margin-bottom: 50px;
+}
+
+.center {
+    width: 70%;
+    float: left;
+    flex-grow: 10;
+    flex-shrink: 1;
+    padding: 0 15px;
+}
+
+.center section {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+}
+
+.center section h2 {
+    flex-basis: 100%;
+}
+
+.center h2 {
+    text-align: center;
+    position: relative;
+    margin: 0;
+    padding: 10px 0 5px;
+}
+
+.center h3{
+    margin: 0;
+    word-wrap: break-word;
+    overflow: hidden;
+    width: calc(100% - 10px);
+    text-align: center;
+    margin-bottom: 0px;
+    background: #f7fdff;
+    padding: 5px;
+    font-size: 17px;
+}
+
+.machine {
+    padding: 5px;
+    border-radius: 4px;
+    background: #DEF3FF;
+    margin: 5px;
+    width: 305px;
+    min-width: 15%;
+    flex-grow: 1;
+    max-width: 50%;
+    position: relative;
+}
+
+.machine .sslRow {
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    padding-top: 5px;
+}
+
+.script h3 {
+    height: auto;
+}
+
+.remotesList a {
+    width: calc(25% - 3px);
+    font-weight: 600;
+}
+.remotesList li {
+    background: white;
+    padding: 4px;
+    border-radius: 2px;
+    margin-top: 5px;
+}
+.remotesList li:hover {
+    background: #f9ffff;
+}
+.remotesList {
+    margin:0px;
+    padding: 0px;
+    text-align: center;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+.script {
+    display: flex;
+    flex-direction: column;
+    float: left;
+    padding: 5px;
+    border-radius: 4px;
+    background: #DEF3FF;
+    margin: 5px;
+    min-width: 30%;
+    max-width: 48%;
+}
+.script textarea {
+    flex-grow: 1;
+}
+.sideBar {
+    width: 175px;
+    flex-grow: 1;
+    flex-shrink: 2;
+    padding: 0 1% 20px;
+    background: #DEF3FF;
+}
+.sideBar:last-child {
+    border-bottom-left-radius: 8px;
+}
+.sideBar:first-child {
+    border-bottom-right-radius: 8px;
+}
+.sideBar section {
+    position: relative;
+}
+.sideBar h2 {
+    margin-bottom: 5px;
+    font-size: 20px;
+}
+.sideBar ul {
+    margin: 0;
+    padding: 0;
+}
+.sideBar li.newLink {
+    padding: 5px;
+    background: #f7fdff;
+    cursor: pointer;
+    border-radius: 2px;
+}
+.sideBar li {
+    margin: 4px 0;
+    padding: 0 0 0 15px;
+    position: relative;
+}
+.newLink input {
+    margin: 2px 0;
+}
+.clean:hover {
+    opacity: 1;
+}
+.clean {
+    opacity: 0.4;
+}
+
+.editlink:hover {
+    background: #fff;
+}
+.editlink:active,
+.editlink.pressed {
+    box-shadow: inset 0px 0px 4px 0px black;
+}
+.editlink {
+    position: absolute;
+    bottom: 9px;
+    right: 15px;
+    color: black;
+    background: #eee;
+    padding: 5px 15px;
+    border-radius: 1px;
+    box-shadow: inset -1px -1px 4px 0px black;
+    cursor: pointer;
+}
+.machine:hover > span.delete,
+section:hover > span.delete,
+li:hover > span.delete {
+    display: block;
+}
+li.newLink > span.delete {
+    right: -12px;
+    left: inherit;
+    top: -12px;
+}
+li > span.delete {
+    left: -12px;
+    top: -2px;
+}
+span.delete {
+    display: none;
+    position: absolute;
+    top: -7px;
+    right: -7px;
+    cursor: pointer;
+    font-weight: 600;
+    background: #e1e7ea;
+    border-radius: 45px;
+    padding: 10px;
+    line-height: 0px;
+    width: 0px;
+    border: 1px solid #96bad4;
+}
+span.delete:before {
+ content:'x';
+ position:absolute;
+ left: 50%;
+ transform: translateX(-50%);
+}
+.messageHolder {
+    position: absolute;
+    z-index: 1000;
+    top: 50px;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.message {
+    background: #ffd7dd;
+    padding: 0px 35px 0px 5px;
+    border-radius: 4px;
+    border: 2px #bf2525 solid;
+    position: relative;
+    margin-bottom: 4px;
+    height: 28px;
+    overflow: hidden;
+    transition: all linear 300ms;
+    display: flex;
+    align-items: center;
+    flex-direction: row;
+}
+
+.message >span:first-child {
+    margin: 5px 0;
+    display: block;
+}
+
+span.delete.closeMessage {
+    top: 4px;
+    font-size: 18px;
+    right: 1px;
+    z-index: 2000;
+    display: block;
+    background: transparent;
+    border: none;
+    border-radius: 0;
+    border-left: solid #bf2525 2px;
+}
+.noHeight {
+    height: 0px !important;
+}
+/*----------------------Footer--------------------------------------*/
+
+.footer {
+    height: 28px;
+    width: 100%;
+    position: fixed;
+    margin: 10px auto 0;
+    bottom: 0px;
+    color: black;
+    background: #f7fdff;
+    box-shadow: #a9bcc7 0px 0px 7px 0px;
+}
+
+p.impressum {
+    padding: 5px 0;
+    text-align: center;
+    margin: 0;
+}
+
+.edit .footer {
+    height: 40px;
+    font-size: 17px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.edit .impressum span {
+    background: #eaeaea;
+    padding: 3px 8px;
+    border: #717171 solid 2px;
+    border-radius: 3px;
+}
+
+.googleForm {
+    position: relative;
+    margin-top: 10px;
+}
+
+.googleInput {
+    width: calc(100% - 15px);
+    box-sizing: border-box;
+    height: 26px;
+    line-height: 22px;
+    padding: 2px 28px 2px 3px;
+    font-size: 15px;
+    margin-left: 15px;
+}
+
+.googleIcon {
+    position: absolute;
+    right: 0px;
+    top: 50%;
+    transform: translateY(-50%);
+    background: whitesmoke;
+    padding: 4px 5px;
+    border: solid 1px darkgrey;
+    height: 16px;
+    cursor: pointer;
+}
+
+.weatherContainer {
+    display: flex;
+    margin: 10px 5px 15px;
+    border: 1px black solid;
+    position: relative;
+}
+.weatherContainer div:first-child{
+    border-left: none;
+}
+.weatherContainer div{
+    border-left: dotted black 1px;
+    height: 10px;
+    width: 30px;
+}
+.weatherContainer div span{
+    visibility: hidden;
+    font-size: 13px;
+    font-weight: bold;
+    position: relative;
+    bottom: -9px;
+}
+.weatherContainer.third div:nth-child(3n + 2) span{
+    visibility: visible;
+}
+.weatherContainer.second div:nth-child(3n) span{
+    visibility: visible;
+}
+.weatherContainer.first div:nth-child(3n + 1) span{
+    visibility: visible;
+}
+.marker {
+    position: absolute;
+    left: 0%;
+    width: 4px;
+    height: 100%;
+    background: red;
+    transform: translateX(-50%);
+}

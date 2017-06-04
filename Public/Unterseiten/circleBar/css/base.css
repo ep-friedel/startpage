@@ -1,0 +1,25 @@
+.circle{
+	position: relative;
+	border-radius: 50%;
+	overflow: hidden;
+}
+.circleFill{
+	border-radius: 50%;
+	position: absolute;
+}
+.percentageWrapper{
+	width: 80%;
+	height: 80%;
+	left: 10%;
+	top: 10%;
+	position: relative;
+}
+#main-wrapper{
+	width:50%;
+	margin:auto;
+	height: 500px;
+	border: solid 1px;
+}
+.circleDummy{
+	margin-top: 100%;
+}
