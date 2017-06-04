@@ -9,6 +9,7 @@ const   express = require('express')
     ,   fetch = require('node-fetch')
     ,   server_port = process.env.SP_PORT
     ,   server_ip_address = 'localhost'
+    ,   hmac = require(process.env.SP_HOME + 'modules/auth/hmac')(process.env.GITHUB_SECRET, 'X-Hub-Signature')
     ,   sslServer = https.createServer({
             key: fs.readFileSync(process.env.KEYSTORE + 'fochlac_com_key.pem'),
             cert: fs.readFileSync(process.env.KEYSTORE + 'fochlac_com_cert_chain.pem')
@@ -176,3 +177,9 @@ app.get('/:user/api/*', (req, res) => res.status(404).send());
 
 app.get('/:user/*', (req, res) => res.redirect('https://' + req.headers.host + '/index.html'));
 
+app.post('/:user/api/triggerBuild', hmac, (req, res) => {
+    exec(process.env.SP_HOME + "scripts/build", (error, stdout, stderr) => {
+        console.log(stdout + error + stderr);
+    });
+    res.status(200).send();
+});
