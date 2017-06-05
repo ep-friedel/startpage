@@ -1,7 +1,7 @@
 #!/bin/bash
 cd /home/startseite
 
-git fetch
-git pull
+git fetch origin
+git reset --hard origin/master
 
 systemctl restart SPd
