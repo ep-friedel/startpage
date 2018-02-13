@@ -4,17 +4,14 @@ const   express = require('express')
     ,   app = express()
     ,   server = require('http').createServer(app)
     ,   fs = require('fs')
-    ,   https = require('https')
+    ,   http = require('http')
     ,   bodyParser = require('body-parser')
     ,   fetch = require('node-fetch')
     ,   server_port = process.env.SP_PORT
     ,   server_ip_address = 'localhost'
     ,   exec = require('child_process').execFile
     ,   hmac = require(process.env.SP_HOME + 'hmac')(process.env.GITHUB_SECRET, 'X-Hub-Signature')
-    ,   sslServer = https.createServer({
-            key: fs.readFileSync(process.env.KEYSTORE + 'fochlac_com_key.pem'),
-            cert: fs.readFileSync(process.env.KEYSTORE + 'fochlac_com_cert_chain.pem')
-        }, app)
+    ,   sslServer = http.createServer(app)
     ,   auth = require(process.env.SP_HOME + 'auth')()
     ,   sql = require(process.env.SP_HOME + 'db')();
 
